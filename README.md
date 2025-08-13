@@ -50,7 +50,6 @@ python main.py
 What this does:
 - Converts masks → YOLO labels (`yolo_data/`), keeping city-based subfolders.
 - Creates `data/idd_lite.yaml` with the 10 fixed class names.
-- Trains YOLOv5 for **1 epoch**.
 - Saves weights to:  
   ```
   runs_idd/exp/weights/best.pt
