@@ -21,12 +21,12 @@ venv/
 Thumbs.db
 
 # Data and runs
-idd-lite/
-yolo_data/
-runs_idd/
+# idd-lite/
+# yolo_data/
+# runs_idd/
 
 # Models/weights
-*.pt
+# *.pt
 *.onnx
 *.engine
 
@@ -44,4 +44,3 @@ cache/
 **/__pycache__/
 rough.txt
 README_HI.md
-data

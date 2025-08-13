@@ -1,0 +1,10 @@
+path: E:\myProjects\myProjects\Object-detection
+train: E:\myProjects\myProjects\Object-detection\yolo_data\images\train
+val: E:\myProjects\myProjects\Object-detection\yolo_data\images\val
+names:
+- drivable_fallback
+- sidewalk
+- non_drivable_fallback
+- person
+- rider
+- road
