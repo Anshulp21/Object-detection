@@ -41,12 +41,7 @@ pip install -r requirements.txt
 
 ---
 
-This matches the default paths expected by the code.  
-**No CLI arguments needed** unless using a custom dataset path.
 
----
-
-## 🚀 Run the Full Pipeline (Prep + Train 1 Epoch)
 
 ```powershell
 python main.py
