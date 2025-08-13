@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pdb
+*.coverage
+.coverage*
+.pytest_cache/
+
+# Virtual env
+venv/
+.env/
+.venv/
+
+# IDE/OS
+.vscode/
+.idea/
+*.code-workspace
+.DS_Store
+Thumbs.db
+
+# Data and runs
+idd-lite/
+yolo_data/
+runs_idd/
+
+# Models/weights
+*.pt
+*.onnx
+*.engine
+
+# Logs
+logs/
+*.log
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Cache
+cache/
+*.cache/
+**/__pycache__/
+rough.txt
+README_HI.md
+data
