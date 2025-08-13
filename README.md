@@ -12,25 +12,6 @@ Key files:
 
 ---
 
-## 1) Supported classes (fixed list)
-We train on a fixed, meaningful subset of object classes (background categories removed):
-
-```
-0: person
-1: rider
-2: motorcycle
-3: bicycle
-4: autorickshaw
-5: car
-6: truck
-7: bus
-8: traffic_sign
-9: traffic_light
-```
-
-This ensures `data/idd_lite.yaml` always contains these 10 names in this order
----
-
 ## 2) Setup (Windows)
 ```powershell
 python -m venv venv
@@ -41,17 +22,6 @@ pip install -r requirements.txt
 
 ---
 
-## 3) Dataset placement
-Unzip IDD-Lite and place inside the repo at:
-
-```
-<repo>/idd-lite/idd20k_lite/
-  leftImg8bit/{train,val}/<city>/*.jpg
-  gtFine/{train,val}/<city>/*_label.png
-  gtFine/{train,val}/<city>/*_inst_label.png
-```
-
-This matches the default expected by the code. No CLI args needed.
 
 ---
 
