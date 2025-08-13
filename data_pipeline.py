@@ -10,8 +10,11 @@ import json
 import shutil
 from pathlib import Path
 from typing import Dict, List, Tuple
+from collections import OrderedDict, defaultdict
 
 import yaml
+import numpy as np
+import cv2
 
 
 PROJECT_ROOT = Path(__file__).resolve().parent
@@ -78,9 +81,6 @@ def convertDataset(iddRoot: Path) -> Tuple[Path, Path, List[str]]:
     splits = discoverSplits(iddRoot)
 
     # Discover classes dynamically by scanning label masks for unique values
-    from collections import OrderedDict
-    import numpy as np
-    import cv2
 
     value_to_index: Dict[int, int] = OrderedDict()
     fallback_mode = False
@@ -111,8 +111,6 @@ def convertDataset(iddRoot: Path) -> Tuple[Path, Path, List[str]]:
     if not value_to_index:
         # Diagnostics: collect some unique values and write to file
         print("[WARN] No classes discovered. Enabling fallback single-class mode. Writing diagnostics to data/diag_values.json", flush=True)
-        from collections import defaultdict
-        import json as _json
         diag = defaultdict(list)
         diag_count = 0
         for split, left_dir in splits.items():
@@ -138,7 +136,7 @@ def convertDataset(iddRoot: Path) -> Tuple[Path, Path, List[str]]:
                 break
         (DATA_DIR).mkdir(exist_ok=True)
         with (DATA_DIR / "diag_values.json").open("w", encoding="utf-8") as f:
-            _json.dump(diag, f, indent=2)
+            json.dump(diag, f, indent=2)
         # Fallback: single class 'object'
         value_to_index = {1: 0}
         fallback_mode = True
@@ -172,8 +170,6 @@ def convertDataset(iddRoot: Path) -> Tuple[Path, Path, List[str]]:
         (IMAGES_LINK_DIR / split).mkdir(parents=True, exist_ok=True)
 
     # Convert annotations: instance mask -> bbox per instance
-    import numpy as np
-    import cv2
 
     for split, left_dir in splits.items():
         imgs = scanOneSplit(left_dir)
