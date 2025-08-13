@@ -41,17 +41,6 @@ pip install -r requirements.txt
 
 ---
 
-## 📂 Dataset Placement
-
-Unzip **IDD-Lite** and place it inside the repo:
-
-```
-<repo>/idd-lite/idd20k_lite/
-  leftImg8bit/{train,val}/<city>/*.jpg
-  gtFine/{train,val}/<city>/*_label.png
-  gtFine/{train,val}/<city>/*_inst_label.png
-```
-
 This matches the default paths expected by the code.  
 **No CLI arguments needed** unless using a custom dataset path.
 
